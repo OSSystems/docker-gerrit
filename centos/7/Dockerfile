@@ -1,8 +1,8 @@
 FROM centos:7.3.1611
 MAINTAINER Gerrit Code Review Community
 
-# Allow remote connectivity and sudo
-RUN yum -y install openssh-client initscripts sudo
+# Allow remote connectivity, sudo and gitweb dependencies
+RUN yum -y install openssh-client initscripts sudo perl-CGI-Session
 
 # Add Gerrit packages repository
 RUN rpm -i https://gerritforge.com/gerritforge-repo-1-2.noarch.rpm
