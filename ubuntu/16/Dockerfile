@@ -23,5 +23,7 @@ EXPOSE 29418 8080
 
 VOLUME ["/var/gerrit/git", "/var/gerrit/index", "/var/gerrit/cache", "/var/gerrit/db", "/var/gerrit/etc"]
 
+ENV GERRIT_SITE /var/gerrit
+
 # Start Gerrit
-CMD /var/gerrit/bin/gerrit.sh start && tail -f /var/gerrit/logs/error_log
+CMD /var/gerrit/bin/gerrit.sh start && tail -f $GERRIT_SITE/logs/error_log
