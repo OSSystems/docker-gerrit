@@ -17,7 +17,7 @@ RUN apt-get -y install --no-install-recommends \
 # (pre-trans Gerrit script needs to have access to the Java command).
 # Also, keep package versions explicit to ease updates.
 
-ENV OPENJDK_VERSION 8u151-b12-0ubuntu0.16.04.2
+ENV OPENJDK_VERSION 8u171-b11-0ubuntu0.16.04.1
 
 RUN apt-get update \
  && apt-get -y install --no-install-recommends \
