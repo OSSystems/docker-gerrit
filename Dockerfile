@@ -15,13 +15,11 @@ RUN apt-get -y install --no-install-recommends \
 
 # Install OpenJDK and Gerrit in two subsequent transactions
 # (pre-trans Gerrit script needs to have access to the Java command).
-# Also, keep package versions explicit to ease updates.
-
-ENV OPENJDK_VERSION 8u171-b11-0ubuntu0.16.04.1
+# Also, keep Gerrit package version explicit to ease updates.
 
 RUN apt-get update \
  && apt-get -y install --no-install-recommends \
-            openjdk-8-jre-headless=$OPENJDK_VERSION
+            openjdk-8-jre-headless
 
 ENV GERRIT_VERSION 2.15.7-1
 
