@@ -30,6 +30,8 @@ RUN apt-get update \
             gerrit=$GERRIT_VERSION \
  && rm -f /var/gerrit/logs/*
 
+RUN apt-get -y dist-upgrade --no-install-recommends
+
 USER gerrit
 RUN java -jar /var/gerrit/bin/gerrit.war init --batch --install-all-plugins -d /var/gerrit
 
