@@ -28,6 +28,8 @@ RUN apt-get update \
             gerrit=$GERRIT_VERSION \
  && rm -f /var/gerrit/logs/*
 
+RUN echo "gerrit hold" | sudo dpkg --set-selections
+
 RUN apt-get -y dist-upgrade --no-install-recommends
 
 USER gerrit
