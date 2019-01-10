@@ -32,15 +32,14 @@ RUN echo "gerrit hold" | sudo dpkg --set-selections
 
 RUN apt-get -y dist-upgrade --no-install-recommends
 
-USER gerrit
-RUN java -jar /var/gerrit/bin/gerrit.war init --batch --install-all-plugins -d /var/gerrit
+ENV GERRIT_SITE /var/gerrit
+
+RUN su gerrit -c "java -jar /var/gerrit/bin/gerrit.war init --batch --install-all-plugins -d /var/gerrit"
 
 # Allow incoming traffic
 EXPOSE 29418 8080
 
 VOLUME ["/var/gerrit/git", "/var/gerrit/index", "/var/gerrit/cache", "/var/gerrit/db", "/var/gerrit/etc"]
-
-ENV GERRIT_SITE /var/gerrit
 
 # Start Gerrit
 CMD /var/gerrit/bin/gerrit.sh start && tail -f $GERRIT_SITE/logs/error_log
