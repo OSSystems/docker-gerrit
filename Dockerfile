@@ -21,7 +21,7 @@ RUN apt-get update \
  && apt-get -y install --no-install-recommends \
             openjdk-8-jre-headless
 
-ENV GERRIT_VERSION 2.16.1-1
+ENV GERRIT_VERSION 2.16.3-1
 
 RUN apt-get update \
  && apt-get -y install --no-install-recommends \
