@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 MAINTAINER Gerrit Code Review Community
 
 # Add Gerrit packages repository
-RUN echo "deb mirror://mirrorlist.gerritforge.com/deb gerrit contrib" > /etc/apt/sources.list.d/GerritForge.list
+RUN echo "deb http://deb.gerritforge.com/ gerrit contrib" > /etc/apt/sources.list.d/GerritForge.list
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1871F775
 
 # Allow remote connectivity, sudo and gitweb dependencies
