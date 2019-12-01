@@ -11,6 +11,7 @@ RUN apt-key update
 RUN apt-get upgrade -y
 RUN apt-get -y install --no-install-recommends \
             libcgi-session-perl \
+            gnupg2 \
             openssh-client \
             sudo
 
