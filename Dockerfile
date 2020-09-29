@@ -6,10 +6,10 @@ RUN echo "deb mirror://mirrorlist.gerritforge.com/bionic gerrit contrib" > /etc/
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 847005AE619067D5
 
 # Allow remote connectivity, sudo and gitweb dependencies
-RUN apt-get update
-RUN apt-key update
-RUN apt-get upgrade -y
-RUN apt-get -y install --no-install-recommends \
+RUN apt-get update \
+ && apt-key update \
+ && apt-get upgrade -y \
+ && apt-get -y install --no-install-recommends \
             libcgi-session-perl \
             gnupg2 \
             openssh-client \
