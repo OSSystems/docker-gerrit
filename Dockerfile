@@ -23,7 +23,7 @@ RUN apt-get update \
  && apt-get -y install --no-install-recommends \
             openjdk-8-jre-headless
 
-ENV GERRIT_VERSION 3.0.13-1
+ENV GERRIT_VERSION 3.1.8-1
 
 RUN apt-get update \
  && apt-get -y install --no-install-recommends \
